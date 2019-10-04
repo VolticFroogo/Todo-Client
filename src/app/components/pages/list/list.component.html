@@ -1,0 +1,6 @@
+<div>
+  <div class="container">
+    <h1 class="name">{{ list.name }}</h1>
+    <app-todo-item *ngFor="let todo of list.todos" [todo]="todo"></app-todo-item>
+  </div>
+</div>

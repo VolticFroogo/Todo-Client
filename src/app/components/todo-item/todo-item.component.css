@@ -1,0 +1,18 @@
+.parent {
+  margin-top: 10px;
+}
+
+.checkbox-parent {
+  width: calc(100% - 70px);
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}

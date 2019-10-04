@@ -1,0 +1,30 @@
+<div class="parent">
+  <button id="back" mat-button (click)="onBack()">
+    <i class="material-icons">arrow_back</i>
+    Back
+  </button>
+
+  <div class="centre-box">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1>Log in</h1>
+      <div>
+        <mat-form-field>
+          <input matInput type="email" placeholder="Email" formControlName="email">
+          <mat-error *ngIf="form.get('email').invalid">{{ emailError() }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+          <mat-error *ngIf="form.get('password').invalid">{{ passwordError() }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+      </div>
+      <div>
+        <button mat-button routerLink="/register">Register instead</button>
+      </div>
+    </form>
+  </div>
+</div>
