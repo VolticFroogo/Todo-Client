@@ -12,4 +12,8 @@ export class TodoEditComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<TodoEditComponent>, @Inject(MAT_DIALOG_DATA) private todo: Todo) { }
 
   ngOnInit() { }
+
+  onDelete() {
+    this.dialogRef.close('delete');
+  }
 }

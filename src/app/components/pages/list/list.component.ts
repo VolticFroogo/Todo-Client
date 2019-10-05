@@ -30,4 +30,8 @@ export class ListComponent implements OnInit {
       this.title.setTitle(`Todo List - ${ this.list.name }`);
     });
   }
+
+  deleteTodo(id: number) {
+    this.list.todos = this.list.todos.filter(t => t.id !== id);
+  }
 }

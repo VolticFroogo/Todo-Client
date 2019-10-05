@@ -104,6 +104,13 @@ export class TodoService {
       observer.complete();
     });
   }
+
+  public deleteTodo(id: number): Observable<string> {
+    return new Observable<string>((observer) => {
+      observer.next(null);
+      observer.complete();
+    });
+  }
 }
 
 export class ValueWithError<T> {

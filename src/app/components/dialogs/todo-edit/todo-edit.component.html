@@ -11,6 +11,7 @@
     <div class="modified">Modified {{ todo.modified * 1000 | timeAgo }}</div>
   </div>
   <div mat-dialog-actions class="actions">
+    <button mat-button color="warn" (click)="onDelete()">Delete</button>
     <button mat-button [mat-dialog-close]>Close</button>
   </div>
 </div>

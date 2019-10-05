@@ -19,6 +19,7 @@ import { ListComponent } from './components/pages/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoEditComponent } from './components/dialogs/todo-edit/todo-edit.component';
+import { ConfirmDeleteComponent } from './components/dialogs/confirm-delete/confirm-delete.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TodoEditComponent } from './components/dialogs/todo-edit/todo-edit.comp
     ListItemComponent,
     TodoItemComponent,
     TodoEditComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    ConfirmDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { TodoEditComponent } from './components/dialogs/todo-edit/todo-edit.comp
     ToastrModule.forRoot()
   ],
   entryComponents: [
-    TodoEditComponent
+    TodoEditComponent,
+    ConfirmDeleteComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
