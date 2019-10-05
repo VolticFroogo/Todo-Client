@@ -20,6 +20,7 @@ export class TodoItemComponent implements OnInit {
 
   onCheckboxToggle(event: MatCheckboxChange) {
     this.todo.completed = event.checked;
+    this.todo.modified = Math.floor(Date.now() / 1000);
 
     this.service.putTodo(this.todo).subscribe(error => {
       if (error != null) {
@@ -29,11 +30,18 @@ export class TodoItemComponent implements OnInit {
   }
 
   onEdit() {
+    var original: string = JSON.stringify(this.todo);
+
     var dialogRef = this.dialog.open(TodoEditComponent, {
       data: this.todo
     });
 
     dialogRef.afterClosed().subscribe(() => {
+      if (JSON.stringify(this.todo) == original)
+        return;
+
+      this.todo.modified = Math.floor(Date.now() / 1000);
+
       this.service.putTodo(this.todo).subscribe(error => {
         if (error != null) {
           this.toastr.error(error);
