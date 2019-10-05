@@ -1,6 +1,8 @@
 <mat-card class="parent">
   <div class="checkbox-parent">
-    <mat-checkbox [checked]="todo.completed" (change)="onCheckboxToggle($event)"><span [ngClass]="{ completed: todo.completed }">{{ todo.name }}</span></mat-checkbox>
+    <mat-checkbox [checked]="todo.completed" (change)="onCheckboxToggle($event)">
+      <span [ngClass]="{ completed: todo.completed }">{{ todo.name }}</span>
+    </mat-checkbox>
   </div>
-  <button mat-button>Edit</button>
+  <button mat-button (click)="onEdit()">Edit</button>
 </mat-card>

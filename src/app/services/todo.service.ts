@@ -26,9 +26,9 @@ export class TodoService {
     });
   }
 
-  public register(email: string, password: string): Observable<ValueWithError<boolean>> {
-    return new Observable<ValueWithError<boolean>>((observer) => {
-      observer.next({ value: true });
+  public register(email: string, password: string): Observable<string> {
+    return new Observable<string>((observer) => {
+      observer.next(null);
       observer.complete();
     });
   }
@@ -94,6 +94,13 @@ export class TodoService {
           ]
         }
       });
+      observer.complete();
+    });
+  }
+
+  public putTodo(todo: Todo): Observable<string> {
+    return new Observable<string>((observer) => {
+      observer.next(null);
       observer.complete();
     });
   }

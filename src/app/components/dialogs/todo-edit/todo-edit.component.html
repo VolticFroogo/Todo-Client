@@ -1,0 +1,16 @@
+<div class="parent">
+  <h1 mat-dialog-title>Edit</h1>
+  <div mat-dialog-content>
+    <p>Name</p>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="todo.name">
+    </mat-form-field>
+
+    <div *ngIf="todo.created != null">Created {{ todo.created * 1000 | timeAgo }}</div>
+    <div class="modified">Modified {{ todo.modified * 1000 | timeAgo }}</div>
+  </div>
+  <div mat-dialog-actions class="actions">
+    <button mat-button [mat-dialog-close]>Close</button>
+  </div>
+</div>

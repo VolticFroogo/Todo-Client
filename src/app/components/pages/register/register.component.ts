@@ -42,14 +42,9 @@ export class RegisterComponent implements OnInit {
     this.service.register(
       this.form.get('email').value,
       this.form.get('password').value
-    ).subscribe(r => {
-      if (r.error != null) {
-        this.toastr.error(r.error);
-        return;
-      }
-
-      if (!r.value) {
-        this.toastr.error('Could not register');
+    ).subscribe(error => {
+      if (error != null) {
+        this.toastr.error(error);
         return;
       }
 
