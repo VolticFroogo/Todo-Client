@@ -9,11 +9,19 @@ import { Todo } from '../../../models/todo';
   styleUrls: ['./todo-edit.component.css']
 })
 export class TodoEditComponent implements OnInit {
-  constructor(private dialogRef: MatDialogRef<TodoEditComponent>, @Inject(MAT_DIALOG_DATA) private todo: Todo) { }
+  constructor(private dialogRef: MatDialogRef<TodoEditComponent>, @Inject(MAT_DIALOG_DATA) public todo: Todo) { }
 
   ngOnInit() { }
 
   onDelete() {
     this.dialogRef.close('delete');
+  }
+
+  createdDate() {
+    return new Date(this.todo.created * 1000).toString();
+  }
+
+  modifiedDate() {
+    return new Date(this.todo.created * 1000).toString();
   }
 }

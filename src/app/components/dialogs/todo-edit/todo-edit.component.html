@@ -7,8 +7,8 @@
       <input matInput [(ngModel)]="todo.name">
     </mat-form-field>
 
-    <div *ngIf="todo.created != null">Created {{ todo.created * 1000 | timeAgo }}</div>
-    <div class="modified">Modified {{ todo.modified * 1000 | timeAgo }}</div>
+    <div>Created {{ createdDate() | timeAgo }}</div>
+    <div class="modified">Modified {{ modifiedDate() | timeAgo }}</div>
   </div>
   <div mat-dialog-actions class="actions">
     <button mat-button color="warn" (click)="onDelete()">Delete</button>
