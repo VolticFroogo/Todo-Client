@@ -111,6 +111,13 @@ export class TodoService {
       observer.complete();
     });
   }
+
+  public postTodo(todo: Todo, list: number) {
+    return new Observable<string>((observer) => {
+      observer.next(null);
+      observer.complete();
+    });
+  }
 }
 
 export class ValueWithError<T> {

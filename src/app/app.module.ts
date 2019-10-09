@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatCheckboxModule, MatCardModule, MatDialogModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatCheckboxModule, MatCardModule, MatDialogModule, MatDividerModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
@@ -20,6 +20,7 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoEditComponent } from './components/dialogs/todo-edit/todo-edit.component';
 import { ConfirmDeleteComponent } from './components/dialogs/confirm-delete/confirm-delete.component';
+import { TodoNewComponent } from './components/dialogs/todo-new/todo-new.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ConfirmDeleteComponent } from './components/dialogs/confirm-delete/conf
     TodoItemComponent,
     TodoEditComponent,
     TimeAgoPipe,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    TodoNewComponent
   ],
   imports: [
     BrowserModule,
@@ -48,13 +50,15 @@ import { ConfirmDeleteComponent } from './components/dialogs/confirm-delete/conf
     MatCheckboxModule,
     MatCardModule,
     MatDialogModule,
+    MatDividerModule,
     NgProgressModule,
     NgProgressHttpModule,
     ToastrModule.forRoot()
   ],
   entryComponents: [
     TodoEditComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    TodoNewComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,13 @@
 <div>
   <div class="container">
     <h1 class="name">{{ list.name }}</h1>
+    <div class="details">
+      <span>Created {{ list.created | timeAgo }}</span>
+      <span>Modified {{ list.modified | timeAgo }}</span>
+    </div>
     <app-todo-item *ngFor="let todo of list.todos" [todo]="todo" (delete)="deleteTodo($event)"></app-todo-item>
+    <button mat-raised-button color="primary" class="new" (click)="onNewTodo()">
+      New Todo
+    </button>
   </div>
 </div>

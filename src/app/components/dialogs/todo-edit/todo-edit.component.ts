@@ -22,6 +22,6 @@ export class TodoEditComponent implements OnInit {
   }
 
   modifiedDate() {
-    return new Date(this.todo.created * 1000).toString();
+    return new Date(this.todo.modified * 1000).toString();
   }
 }
